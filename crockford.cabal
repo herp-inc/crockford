@@ -1,8 +1,8 @@
-Build-Type: Custom
+Build-Type: Simple
 Name: crockford
 Category: Codec
 Version: 0.2
-Cabal-Version: >= 1.2
+Cabal-Version: 2.0
 Synopsis: An implementation of Douglas Crockford's base32 encoding.
 Description:
     An implementation of Douglas Crockford's base32 encoding.
@@ -12,9 +12,16 @@ Copyright: (c) 2009 Henry Bucklow
 Author: Henry Bucklow
 Maintainer: Henry Bucklow <henry@elsie.org.uk>
 Tested-With: GHC==6.12
-Build-Depends: base>=4 && < 5, digits, safe, QuickCheck
-Exposed-Modules: Codec.Crockford
-Hs-Source-Dirs: src
 Extra-Source-Files: src/Tests.hs
-GHC-Options: -Wall
 
+Library
+  Hs-Source-Dirs: src
+  Build-Depends: base>=4 && < 5, digits, safe, QuickCheck
+  Exposed-Modules: Codec.Crockford
+  GHC-Options: -Wall
+
+Test-Suite test
+  Type: exitcode-stdio-1.0
+  Hs-Source-Dirs: test
+  Main-Is: Tests.hs
+  Build-Depends: base, QuickCheck, crockford
