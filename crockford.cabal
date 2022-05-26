@@ -12,7 +12,6 @@ Copyright: (c) 2009 Henry Bucklow
 Author: Henry Bucklow
 Maintainer: Henry Bucklow <henry@elsie.org.uk>
 Tested-With: GHC==6.12
-Extra-Source-Files: src/Tests.hs
 
 Library
   Hs-Source-Dirs: src
